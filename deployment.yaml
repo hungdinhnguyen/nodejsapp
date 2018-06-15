@@ -1,19 +1,17 @@
-apiVersion: v1
-kind: ReplicationController
+apiVersion: extension/v1beta1
+kind: Deployment
 metadata:
-  name: nginx
+  name: nodeapp
 spec:
-  replicas: 2
-  selector:
-    app: nginx
+  replicas: 1
   template:
     metadata:
-      name: nginx
       labels:
-        app: nginx
+        name: nodeapp
     spec:
       containers:
-      - name: nginx
-        image: nginx
+      - name: nodeapp
+        image: gcr.io/Nodejsapp/imagestore:v1
         ports:
-        - containerPort: 80
+        - containerPort: 3000
+      
