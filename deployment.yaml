@@ -11,7 +11,7 @@ spec:
     spec:
       containers:
       - name: nodeapp
-        image: gcr.io/Nodejsapp/imagestore:v1
+        image: gcr.io/hello/imagestore:v1
         ports:
         - containerPort: 3000
       
